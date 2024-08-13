@@ -1,0 +1,550 @@
+
+
+
+Built-in Function
+1.abs ()
+Return the absolute value of a number. The argument may be a plain or long integer or a floating-point number. If the argument is a complex number, its magnitude is returned.
+Example:
+>>> def all(iterable):
+    for element in iterable:
+        if not element:
+            return false
+        return True
+2.all()
+Return True if all elements of the iterable are true (or if the iterable is empty). 
+Example:
+def all(iterable):
+    for element in iterable:
+        if not element:
+            return False
+        return True
+
+3.Any()
+Example:
+>>> def any(iterable):
+    for element in iterable:
+        if element:
+            retern True
+        reteurn False
+
+
+
+
+4.bin()
+Convert an integer number to a binary string. The result is a valid Python expression. If x is not a Python int object, it has to define an __index__() method that returns an integer.
+Example:
+>>> bin(90)
+'0b1011010'
+
+5.bool()
+Convert a value to a Boolean, using the standard truth testing procedure. If x is false or omitted, this returns False; otherwise it returns True. bool is also a class, which is a subclass of int. Class bool cannot be subclassed further. Its only instances are False and
+True.
+Example:
+>>> bool(1)
+True
+>>> bool(0)
+False
+>>> bool(232434)
+True
+>>> bool("hey")
+True
+
+
+6.bytearray()
+Return a new array of byte.
+Example:
+>>> bytearray("hey", "UTF-8")
+bytearray(b'hey')
+
+
+
+7.bytes()
+Returns immutable bytes object.
+Example:
+>>> bytes()
+b''
+>>> bytes(1)
+b'\x00'
+>>> bytes(8)
+b'\x00\x00\x00\x00\x00\x00\x00\x00'
+
+
+8.callable()
+Return True if the object argument appears callable, False if not. If this returns true, it is still possible that a call fails, but if it is false, calling object will never succeed. Note that classes are callable (calling a class returns a new instance); class instances are callable if they have a __call__() method.
+
+9.chr()
+Return a string of one character whose ASCII code is the integer i
+Example:
+>>> chr(68)
+'D'
+
+10.classmethod()
+Return a class method for function.
+Example:
+>>> class c:
+    @classmethod
+    def f(cls, argle, arg2....):
+
+
+11.compile():
+Compile the source into a code or AST object
+Example:
+>>> import ast
+>>> ast_object = ast.parse("print('Hello world!')")
+>>> print(type(ast_object))
+
+12.comolex()
+Create a complex number with the value real + imag*j or convert a string or number to a complex numbe
+Example:
+>>> complex()
+0j
+>>> complex(1)
+(1+0j)
+13.delattr()
+Deletes attribute from the object.
+Example:
+delattr(jeep, 'hp')
+
+for attr, value in jeep.__dict__.items():
+    if not attr.startswith('__'):
+        print(attr,'=', value)
+14.dict()
+Create a new data dictionary, optionally with items taken from arg.
+Example:
+>>> dict()
+{}
+>>> dict(a=1, b=2)
+{'a': 1, 'b': 2}
+15.dir()
+Without arguments, return the list of names in the current local scope.
+Example:
+class jeep:
+    hp= 300
+    model = "Wrnagler"
+print(dir(jeep))
+
+16.divmod()
+Take two (non complex) numbers as arguments and return a pair of numbers consisting of their quotient and remainder when using long division. With mixed operand types, the rules for binary arithmetic operators apply
+Example:
+>>> divmod(10,2)
+(5, 0)
+>>> divmod(10,3)
+(3, 1)
+
+17.enumerate()
+Return an enumerate object.
+Example:
+>>> countries= {'USa','canada','Afghanistan'}
+>>> countries
+{'Afghanistan', 'USa', 'canada'}
+>>> list(enumerate(countries))
+[(0, 'Afghanistan'), (1, 'USa'), (2, 'canada')]
+18.eval()
+The arguments are a string and optional globals and locals.
+Example:
+>>> x=1
+>>> eval('x+1')
+19.exec()
+This function supports dynamic execution of python code. Object must be either a string or a code object.
+Example:
+>>> exec("print(max(10,1))")
+10
+
+20.filter()
+Construct a list from those elements of iterable for which function returns true. iterable may be either a sequence, a container which supports iteration, or an iterator
+Example:
+ages = [0, 0, 5, 17, 18, 24]
+ def myFunc(x):
+    return x >= 18
+print(                                         
+    filter(None, ages)
+    )
+
+21.float()
+Returns floating point number from number string.
+Example:
+>>> float(1)
+1.0
+>>> float(20)
+20.0
+>>> float(10.001)
+10.001
+
+
+
+
+22.format()
+Convert a value to a “formatted” representation,
+Example:
+>>> format(5,)
+'5'
+>>> format(5, "%")
+'500.000000%'
+>>> format(5, ".1%")
+'500.0%'
+
+23.frozenset()
+Return a frozenset object, optionally with elements taken from iterable.
+Example:
+>>> a = frozenset()
+>>> 
+>>> a
+frozenset()
+>>> a = frozenset([1,2,3])
+>>> a
+frozenset({1, 2, 3})
+>>> a = frozenset("hey")
+>>> a
+frozenset({'e', 'h', 'y'})
+
+24.global()
+Return a dictionary representing the current global symbol table.
+Example:
+>>> a = 5
+>>> b = 10
+>>> globals()
+{'__name__': '__main__', '__doc__': None, '__package__': 'thonny.plugins.cpython', '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x01B08FB0>, '__spec__': ModuleSpec(name='thonny.plugins.cpython.__main__', loader=<_frozen_importlib_external.SourceFileLoader object at 0x01B08FB0>, origin='C:\\Users\\Nisar\\AppData\\Local\\Programs\\Thonny\\lib\\site-packages\\thonny\\plugins\\cpython\\__main__.py'), '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'a': 5, 'b': 10}
+>>> globals()['a']
+5
+>>> globals()['b']
+10
+
+25.hasattr()
+The arguments are an object and a string.
+Example:
+class jeep:
+    hp= 300
+    model = "Wrangler"
+    
+print(hasattr(jeep,'hp'))
+
+26.hash()
+Return the hash value of the object (if it has one).
+Example:
+>>> hash(6)
+6
+>>> hash(6.0)
+6
+>>> hash("6")
+-1842682909
+>>> hash("6.0")
+222358782
+27.help()
+Invoke the built-in help system. (This function is intended for interactive use.)
+Example:
+>>> help(hash)
+Help on built-in function hash in module builtins:
+
+hash(obj, /)
+    Return the hash value for the given object.
+    
+    Two objects that compare equal must also have the same hash value, but the
+    reverse is not necessarily true.
+
+28.hex()
+Convert an integer number (of any size) to a hexadecimal string. The result is a valid Python expression.
+Example: >>> hex(7)
+'0x7'
+>>> hex(16)
+'0x10'
+
+29.id()
+Return the “identity” of an object. This is an integer (or long integer) which is guaranteed to be unique and constant for this object during its lifetime
+Example: >>> id("test")
+35091712
+>>> id(5)
+1501489728
+>>> id(2)
+1501489680
+>>> id("hi")
+34096352
+30.input()
+Reads and returns a line of string.
+Example:
+>>> input("write after this!")
+write after this!hey whats app?
+'hey whats app?
+
+31.int()
+Convert a string or number to a plain integer.
+Example:
+>>> int(input("Please Enter your birth year!"))
+Please Enter your birth year!2003
+2003
+32.isinstance()
+Return true if the object argument is an instance of the classinfo argument, or of a (direct or indirect) subclass thereof. Also return true if classinfo is a type object (new-style class) and object is an object of that type or of a (direct or indirect) subclass thereof
+Example:
+>>> isinstance("hey",str)
+True
+>>> isinstance("hey", int)
+False
+
+33.iter()
+Return an iterator object.
+Example:
+>>> iter({"hey"})
+<set_iterator object at 0x03DE88C8>
+
+
+
+34.len()
+Returns length of an object.
+Example:
+a = "Hi how are you?"
+>>> len(a)
+15
+
+35.list()
+Return a list whose items are the same and in the same order as iterable‘s items.
+Example:
+>>> (1,2,3)
+(1, 2, 3)
+>>> list((1,2,3))
+[1, 2, 3]
+
+36.map()
+Apply function to every item of iterable and return a list of the results.
+Example:
+def to_upper_case(s):
+    return s.upper()
+map_iterator = map(to_upper_case,'abc')
+print(list(map_iterator)) 
+
+37.max()
+Returns the largest item.
+Example:
+>>> a = (22,34,87)
+>>> max(a)
+87
+38.min()
+Return the smallest value.
+Example: >>> a = (22,34,87)
+>>> min(a)
+22
+
+39.memoryview()
+Returns memoryview of an argument.
+Example:
+>>> a = b'hey'
+>>> memoryview(a)
+<memory at 0x038E07E8>
+
+40.next()
+Retrieve the next item from the iterator by calling its next() method.
+Example:
+>>> a = iter(["python","is","great"])
+>>> next(a)
+'python'
+>>> next(a)
+'is'
+>>> next(a)
+'great'
+
+41.object()
+Return a new featureless object. object is a base for all new style classes.
+Example:
+>>> a = object()
+>>> 
+>>> a
+<object object at 0x00E53B90>
+>>> a = object()
+>>> a
+<object object at 0x00E53B78>
+>>> b = object()
+>>> b
+<object object at 0x00E53BB0>
+>>> a==b
+False
+
+42.octal()
+Returns the octal representation of an integer.
+Example:
+>>> oct(20)
+'0o24'
+>>> oct(7)
+'0o7'
+
+
+43.open()
+Return a file object.
+Example:
+file = open('alice.txt', mode='r', buffering=-1,
+            encoding=None,errors=None,newLine=None,
+            closefd=True, opener=None)
+for line in file:
+    print(line)
+
+
+
+
+44.ord()
+Returns an integer of the Unicode character.
+Example:
+>>> ord('a')
+97
+45.pow
+Return the power of a number.
+Example:
+>>> pow(6 ,2)
+36
+46.print()
+Prints the given object.
+Example:
+>>> print("Hellow world")
+Hellow world
+>>> print(25)
+25
+
+47.range()
+This is a versatile function to create lists containing arithmetic progressions
+Example:
+>>> for i in range(1,7):
+    print(i)
+    
+1
+2
+3
+4
+5
+6
+48.repr()
+Return a string containing a printable representation of an object.
+Example:
+>>> from decimal import Decimal
+>>> a = Decimal(1.25)
+>>> a
+Decimal('1.25')
+>>> str(a)
+'1.25'
+>>> repr(a)
+"Decimal('1.25')"
+
+49.round()
+Return the floating point value x rounded to n digits after the decimal point
+Example:
+>>> a = 78.54897
+>>> round(a)
+79
+
+50.set()
+Construct and return a set.
+Example:
+>>> a = [1,2,3,3,3,3]
+>>> set(a)
+{1, 2, 3}
+>>> list(set(a))
+[1, 2, 3]
+
+
+
+51.setattr()
+Sets the value of an attribute of an object.
+Example:
+class jeep:
+    hp = 300
+    model = "Wrangler"
+    
+print(getattr(jeep, 'hp'))
+setattr(jeep, 'hp', 400)
+print(getattr(jeep, 'hp'))
+
+52.slice()
+Return a slice object representing the set of indices specified by range (start, stop, step).
+Example:
+>>> a = ('a', 'b', 'c', 'd', 'e')
+>>> a
+('a', 'b', 'c', 'd', 'e')
+>>> a[:2]
+('a', 'b')
+>>> b = slice(2)
+>>> b
+slice(None, 2, None)
+
+
+
+
+
+
+53.sorted()
+Return a new sorted list from the items in iterable.
+Example:
+>>> a = ['c', 's', 'v', 'a']
+>>> sorted(a)
+['a', 'c', 's', 'v']
+
+
+54.staticmethod()
+Return a static method for function.
+Example:
+>>> class c:
+    @staticmethod
+    def f(arg1, arg2, ...):
+
+55.str()
+Return a string containing a nicely printable representation of an object.
+Example:
+>>> a = 45
+>>> type(a)
+<class 'int'>
+>>> b = '45'
+>>> type(b)
+<class 'str'>
+
+
+
+
+
+56.sum()
+Adds items of an iterable.
+Example:
+>>> a = (1,2)
+>>> b = (1,2,3)
+>>> c = {1,2,3,4}
+>>> sum(a)
+3
+>>> sum(b)
+6
+>>> sum(c)
+10
+
+
+57.tuple()
+Return a tuple whose items are the same and in the same order as iterable‘s items.
+Example:
+>>> a =(1,2,3)
+>>> type(a)
+<class 'tuple'>
+>>> tuple()
+()
+>>> tuple([1,2,3])
+(1, 2, 3)
+>>> tuple((1,2,3))
+(1, 2, 3)
+>>> tuple({1,2})
+(1, 2)
+58.type()
+Return the type of an object.
+Example:
+>>> a = 34
+>>> type(a)
+<class 'int'>
+>>> b = "Hello world!"
+>>> type(b)
+<class 'str'>
+>>> c = 56.1
+>>> type(c)
+<class 'float'>
+
+
+59.vars()
+Without an argument, act like locals.
+Example:
+>>> class car:
+    speed = 100
+car
+
+<class '__main__.car'>
+>>> vars(car)
+mappingproxy({'__module__': '__main__', 'speed': 100, '__dict__': <attribute '__dict__' of 'car' objects>, '__weakref__': <attribute '__weakref__' of 'car' objects>, '__doc__': None})
+
+
